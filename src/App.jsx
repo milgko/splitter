@@ -113,7 +113,7 @@ function App() {
               Number of People
             </h5>
 
-            <input type="number" className='text-sm placeholder-[#B9CBCC] bg-[#f4f7fa]' onChange={handlePeopleChange} placeholder='1' />
+            <input type="number" className='text-sm placeholder-[#B9CBCC] bg-[#f4f7fa]' onChange={handlePeopleChange} placeholder='0' />
 
           </div>
 
@@ -122,23 +122,27 @@ function App() {
           className="h-[300px] w-[300px] mt-[24px] ml-[70px] bg-[#01464c] text-white rounded-lg "
         >
 
-          <div className='mt-2'>
-            <p>Tip Amount</p>
-            <span>/person</span>
-            <h2>${(parseFloat(calculateTipAmount()) / numOfPpl).toFixed(2)}</h2>
+          <div className='my-8 ml-8 mr-6'>
+            <div className='flex justify-between'>
+              <p className='text-sm mt-1'>Tip Amount</p>
+              <h2 className='text-3xl text-[#25b7a9]'>${(parseFloat(calculateTipAmount()) / numOfPpl).toFixed(2)}</h2>
+            </div>
+            <span className='text-xs text-[#568d94]'>/person</span>
           </div>
 
 
-          <div className='mt-2'>
-            <p>Total</p>
-            <span>/person</span>
-            <h2>${billPerPerson()}</h2>
+          <div className='mt-2 ml-8 mr-6'>
+            <div className='flex justify-between'>
+              <p className='text-sm'>Total</p>
+              <h2 className='text-3xl text-[#25b7a9]'>${billPerPerson()}</h2>
+            </div>
+            <span className='text-xs text-[#568d94]'>/person</span>
           </div>
 
 
-          <div className='mt-20'>
-            <h1>Total with tip</h1>
-            <p>${totalBillWithTip(mainBill, calculateTipAmount())}</p>
+          <div className='mt-12 ml-8 mr-6 flex justify-between'>
+            <h1 className='text-sm mt-1'>Total with tip</h1>
+            <p className='text-2xl text-[#25b7a9]'>${totalBillWithTip(mainBill, calculateTipAmount())}</p>
           </div>
 
         </div>
